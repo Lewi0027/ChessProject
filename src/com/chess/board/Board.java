@@ -93,8 +93,7 @@ public class Board {
                         System.out.print(piece.pieceType + "\t");
                     }
                     else {
-                        PieceType pieceType = piece.pieceType;
-                        String output = pieceType.name().toLowerCase();
+                        String output = piece.pieceType.name().toLowerCase();
                         System.out.print(output + "\t");
                     }
                 } else {
