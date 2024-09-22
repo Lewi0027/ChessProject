@@ -1,8 +1,9 @@
 Creating a chess game in Java employing Agile Methodology.
-    - Test-Driven Development
+
+* Test-Driven Development
 
 Components:
-    - User Interface (secondary)
-    - Business Logic (primary)
-    - Account Interface (secondary/ertiary)
 
+* User Interface (secondary)
+* Business Logic (primary)
+* Account Interface (secondary/ertiary)

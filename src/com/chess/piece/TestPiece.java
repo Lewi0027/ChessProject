@@ -7,4 +7,9 @@ public class TestPiece extends Piece{
         super(isWhite);
         this.pieceType = PieceType.TEST_PIECE;
     }
+
+    public TestPiece(boolean isWhite, Location location) {
+        super(isWhite, location);
+        this.pieceType = PieceType.TEST_PIECE;
+    }
 }

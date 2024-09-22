@@ -5,11 +5,18 @@ OUT_DIR = out
 # List of Java source files
 SOURCES = \
     $(SRC_DIR)/com/chess/runner/Game.java \
+	$(SRC_DIR)/com/chess/board/Board.java \
 	$(SRC_DIR)/com/chess/common/File.java \
+	$(SRC_DIR)/com/chess/common/Location.java \
+	$(SRC_DIR)/com/chess/piece/Bishop.java \
+	$(SRC_DIR)/com/chess/piece/King.java \
+	$(SRC_DIR)/com/chess/piece/Knight.java \
+	$(SRC_DIR)/com/chess/piece/Pawn.java \
 	$(SRC_DIR)/com/chess/piece/Piece.java \
 	$(SRC_DIR)/com/chess/piece/PieceType.java \
-	$(SRC_DIR)/com/chess/piece/TestPiece.java \
-	$(SRC_DIR)/com/chess/common/Location.java
+	$(SRC_DIR)/com/chess/piece/Queen.java \
+	$(SRC_DIR)/com/chess/piece/Rook.java \
+	$(SRC_DIR)/com/chess/piece/TestPiece.java
 
 # Corresponding class files
 CLASSES = $(patsubst $(SRC_DIR)/%.java, $(OUT_DIR)/%.class, $(SOURCES))
