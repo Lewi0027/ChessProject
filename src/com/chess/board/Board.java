@@ -5,6 +5,7 @@ import com.chess.piece.King;
 import com.chess.piece.Knight;
 import com.chess.piece.Pawn;
 import com.chess.piece.Piece;
+import com.chess.piece.PieceType;
 import com.chess.piece.Queen;
 import com.chess.piece.Rook;
 import com.chess.common.File;
@@ -32,7 +33,7 @@ public class Board {
             board[1][col] = new Pawn(true, locationWhiteOne);
 
             locationBlackOne = new Location(file, 1);
-            board[6][col] = new Pawn(true, locationBlackOne);
+            board[6][col] = new Pawn(false, locationBlackOne);
         }
         //Create rooks
         locationWhiteOne = new Location(File.A, 0);
@@ -88,7 +89,14 @@ public class Board {
             for (int col = 0; col < BOARD_SIZE; col++) {
                 Piece piece = board[row][col];
                 if (piece != null) {
-                    System.out.print(piece.pieceType + "\t");
+                    if (piece.isWhite == true) {
+                        System.out.print(piece.pieceType + "\t");
+                    }
+                    else {
+                        PieceType pieceType = piece.pieceType;
+                        String output = pieceType.name().toLowerCase();
+                        System.out.print(output + "\t");
+                    }
                 } else {
                     System.out.print("E\t");
                 }
