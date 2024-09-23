@@ -44,11 +44,14 @@ public class Rook extends Piece implements Move{
             }
         }
 
+        //Need to thin possible squares now based on pieces present.
+        //Need to add castling function
+
         return possibleSquares;
     }
 
     @Override
-    public void movePiece(Location startLocation, Location endLocation){
-
+    public void movePiece(Location from, Location to){
+        //Needs to implement moving piece as well as capturing piece
     }
 }

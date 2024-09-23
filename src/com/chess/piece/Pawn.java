@@ -1,8 +1,10 @@
 package com.chess.piece;
 
+import java.util.List;
+
 import com.chess.common.Location;
 
-public class Pawn extends Piece{
+public class Pawn extends Piece implements Move{
     boolean isFirstMove;
     
     public Pawn(boolean isWhite, Location location) {
@@ -13,5 +15,18 @@ public class Pawn extends Piece{
 
     public boolean getIsFirstMove() {
         return isFirstMove;
+    }
+
+    @Override
+    public List<Location> getValidMoves(final Location location) {
+        //Calculate straight movement (1 or 2 squares)
+        //Calculate capture
+        //Caluclate en passant
+        return null;
+    }
+
+    @Override
+    public void movePiece(Location from, Location to) {
+        //Move piece functions different for going straight, cannot capture pieces straight in front.
     }
 }
