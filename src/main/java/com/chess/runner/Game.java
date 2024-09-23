@@ -3,11 +3,11 @@ package com.chess.runner;
 import java.util.List;
 
 import com.chess.board.Board;
-import com.chess.common.Location;
 import com.chess.common.File;
+import com.chess.common.Location;
 import com.chess.piece.Bishop;
-import com.chess.piece.Knight;
 import com.chess.piece.King;
+import com.chess.piece.Knight;
 import com.chess.piece.Move;
 import com.chess.piece.Pawn;
 import com.chess.piece.Piece;

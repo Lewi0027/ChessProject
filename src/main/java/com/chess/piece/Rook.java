@@ -1,10 +1,11 @@
 package com.chess.piece;
 
 import java.util.List;
-import java.util.ArrayList;
 
 import com.chess.common.File;
 import com.chess.common.Location;
+
+import java.util.ArrayList;
 
 public class Rook extends Piece implements Move{
     boolean isFirstMove;

@@ -1,15 +1,14 @@
 package com.chess.board;
 
+import com.chess.common.File;
+import com.chess.common.Location;
 import com.chess.piece.Bishop;
 import com.chess.piece.King;
 import com.chess.piece.Knight;
 import com.chess.piece.Pawn;
 import com.chess.piece.Piece;
-// import com.chess.piece.PieceType;
 import com.chess.piece.Queen;
 import com.chess.piece.Rook;
-import com.chess.common.File;
-import com.chess.common.Location;
 
 public class Board {
     public static final int BOARD_SIZE = 8;
