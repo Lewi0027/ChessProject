@@ -1,11 +1,14 @@
 package com.chess.runner;
 
+import java.util.List;
+
 import com.chess.board.Board;
 import com.chess.common.Location;
 import com.chess.common.File;
 import com.chess.piece.Bishop;
 import com.chess.piece.Knight;
 import com.chess.piece.King;
+import com.chess.piece.Move;
 import com.chess.piece.Pawn;
 import com.chess.piece.Piece;
 import com.chess.piece.Queen;
@@ -72,5 +75,14 @@ public class Game {
         System.out.println("Testing Board Object Contents");
         Board testBoardTwo = new Board();
         testBoardTwo.printBoard();
+
+        //Check Default rook move options no extra logic
+        System.out.println("Testing Rook Move Options");
+        Board testBoardThree = new Board();
+        Piece piece = testBoardThree.getPieceAt(0, 0);
+        if (piece != null) {
+            List<Location> validMoves = ((Move) piece).getValidMoves(testLocationOne);
+            piece.outputLocationList(validMoves);
+        }
     }
 }

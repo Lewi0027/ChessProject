@@ -11,6 +11,7 @@ SOURCES = \
 	$(SRC_DIR)/com/chess/piece/Bishop.java \
 	$(SRC_DIR)/com/chess/piece/King.java \
 	$(SRC_DIR)/com/chess/piece/Knight.java \
+	$(SRC_DIR)/com/chess/piece/Move.java \
 	$(SRC_DIR)/com/chess/piece/Pawn.java \
 	$(SRC_DIR)/com/chess/piece/Piece.java \
 	$(SRC_DIR)/com/chess/piece/PieceType.java \

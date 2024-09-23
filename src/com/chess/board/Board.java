@@ -5,7 +5,7 @@ import com.chess.piece.King;
 import com.chess.piece.Knight;
 import com.chess.piece.Pawn;
 import com.chess.piece.Piece;
-import com.chess.piece.PieceType;
+// import com.chess.piece.PieceType;
 import com.chess.piece.Queen;
 import com.chess.piece.Rook;
 import com.chess.common.File;
@@ -75,6 +75,10 @@ public class Board {
 
     public int getBoardLength() {
         return board.length;
+    }
+
+    public Piece getPieceAt(int row, int col) {
+        return board[row][col];
     }
 
     public void printBoard() {

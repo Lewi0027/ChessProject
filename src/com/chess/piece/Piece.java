@@ -1,5 +1,7 @@
 package com.chess.piece;
 
+import java.util.List;
+
 import com.chess.common.Location;
 
 public abstract class Piece {
@@ -25,10 +27,20 @@ public abstract class Piece {
     public Location getLocation() {
         return location;
     }
-
     //Do we need?
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public void outputLocationList(List<Location> locations) {
+        if (locations.size() == 0) {
+            System.out.println("Empty moves list");
+            return;
+        }
+        
+        for (int i = 0; i < locations.size(); i++) {
+            System.out.println((i+1) + ": " + locations.get(i).toString());
+        }
     }
 
     // Outputs Piece info, only outputs location if it is populated.
