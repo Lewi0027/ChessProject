@@ -80,8 +80,9 @@ public class Game {
         System.out.println("Testing Rook Move Options");
         Board testBoardThree = new Board();
         Piece piece = testBoardThree.getPieceAt(0, 0);
+        testBoardThree.removePieceAt(1, 0); //remove pawn
         if (piece != null) {
-            List<Location> validMoves = ((Move) piece).getValidMoves(testLocationOne);
+            List<Location> validMoves = ((Move) piece).getValidMoves(testBoardThree, testLocationOne, piece.isWhite);
             piece.outputLocationList(validMoves);
         }
     }

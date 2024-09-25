@@ -24,17 +24,17 @@ public class Board {
         Location locationWhiteTwo;
         Location locationBlackOne;
         Location locationBlackTwo;
-        //Create pawns
+        // Create pawns
         for (int col = 0; col < BOARD_SIZE; col++) {
             File file = File.values()[col];
 
             locationWhiteOne = new Location(file, 1);
             board[1][col] = new Pawn(true, locationWhiteOne);
 
-            locationBlackOne = new Location(file, 1);
+            locationBlackOne = new Location(file, 6);
             board[6][col] = new Pawn(false, locationBlackOne);
         }
-        //Create rooks
+        // Create rooks
         locationWhiteOne = new Location(File.A, 0);
         locationWhiteTwo = new Location(File.H, 0);
         locationBlackOne = new Location(File.A, 7);
@@ -43,7 +43,7 @@ public class Board {
         board[0][7] = new Rook(true, locationWhiteTwo);
         board[7][0] = new Rook(false, locationBlackOne);
         board[7][7] = new Rook(false, locationBlackTwo);
-        //Create Knights
+        // Create knights
         locationWhiteOne = new Location(File.B, 0);
         locationWhiteTwo = new Location(File.G, 0);
         locationBlackOne = new Location(File.B, 7);
@@ -52,7 +52,7 @@ public class Board {
         board[0][6] = new Knight(true, locationWhiteTwo);
         board[7][1] = new Knight(false, locationBlackOne);
         board[7][6] = new Knight(false, locationBlackTwo);
-        //Create Bishops
+        // Create bishops
         locationWhiteOne = new Location(File.C, 0);
         locationWhiteTwo = new Location(File.F, 0);
         locationBlackOne = new Location(File.C, 7);
@@ -61,7 +61,7 @@ public class Board {
         board[0][5] = new Bishop(true, locationWhiteTwo);
         board[7][2] = new Bishop(false, locationBlackOne);
         board[7][5] = new Bishop(false, locationBlackTwo);
-        //Create Queens & Kings
+        // Create queens & kings
         locationWhiteOne = new Location(File.D, 0);
         locationWhiteTwo = new Location(File.E, 0);
         locationBlackOne = new Location(File.D, 7);
@@ -76,8 +76,12 @@ public class Board {
         return board.length;
     }
 
-    public Piece getPieceAt(int row, int col) {
-        return board[row][col];
+    public Piece getPieceAt(int row, int col) { // Reversed parameters
+        return board[row][col]; // Reversed indexing
+    }
+
+    public void removePieceAt(int row, int col) { // Reversed parameters
+        board[row][col] = null; // Reversed indexing
     }
 
     public void printBoard() {
@@ -86,16 +90,15 @@ public class Board {
             System.out.print(File.values()[col] + "\t");
         }
         System.out.println();
-    
+
         for (int row = BOARD_SIZE - 1; row >= 0; row--) {
             System.out.print((row + 1) + "\t");
             for (int col = 0; col < BOARD_SIZE; col++) {
-                Piece piece = board[row][col];
+                Piece piece = board[row][col]; // Reversed indexing
                 if (piece != null) {
-                    if (piece.isWhite == true) {
+                    if (piece.isWhite) {
                         System.out.print(piece.pieceType + "\t");
-                    }
-                    else {
+                    } else {
                         String output = piece.pieceType.name().toLowerCase();
                         System.out.print(output + "\t");
                     }
