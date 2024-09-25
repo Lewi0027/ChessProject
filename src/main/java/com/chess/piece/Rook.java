@@ -1,12 +1,11 @@
 package com.chess.piece;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import com.chess.board.Board;
 import com.chess.common.File;
 import com.chess.common.Location;
-
-import java.util.ArrayList;
 
 public class Rook extends Piece implements Move{
     boolean isFirstMove;
@@ -96,7 +95,8 @@ public class Rook extends Piece implements Move{
             }
         }
 
-        //Need to add castling function
+        //Need to add castling function (if Location = X1, X2, Y1, Y2 && king == isFirstMove && rook == isFirstMove) 
+        //to king. WILL NOT GO ON ROOK
 
         return possibleSquares;
     }
@@ -104,7 +104,8 @@ public class Rook extends Piece implements Move{
     @Override
     public void movePiece(Board board, final Location from, final Location to){
         Piece piece = board.getPieceAt(from);
-        // System.out.println(clonedPiece.toString());
+        this.isFirstMove = false;
+        this.setLocation(to);
         board.placePieceAt(to, piece);
         board.removePieceAt(from);
     }

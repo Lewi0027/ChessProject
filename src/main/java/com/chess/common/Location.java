@@ -9,6 +9,17 @@ public class Location {
         this.row = row;
     }
 
+    // public Location(Integer column, Integer row) {
+    //     char colLetter = (char) column;
+    //     this.column = File.(column + 'A');
+    //     this.row = row;
+    // }
+
+    public Location(Location location) {
+        this.column = location.column;
+        this.row = location.row;
+    }
+
     public File getColumn() {
         return this.column;
     }

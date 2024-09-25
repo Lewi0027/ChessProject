@@ -91,5 +91,6 @@ public class Game {
         //Move said rook
         ((Move) piece).movePiece(testBoardThree, locAO, locA6);
         testBoardThree.printBoard();
+        System.out.println(piece.toString());
     }
 }
