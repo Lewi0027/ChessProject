@@ -103,6 +103,9 @@ public class Rook extends Piece implements Move{
 
     @Override
     public void movePiece(Board board, final Location from, final Location to){
-        //Needs to implement moving piece as well as capturing piece
+        Piece piece = board.getPieceAt(from);
+        // System.out.println(clonedPiece.toString());
+        board.placePieceAt(to, piece);
+        board.removePieceAt(from);
     }
 }

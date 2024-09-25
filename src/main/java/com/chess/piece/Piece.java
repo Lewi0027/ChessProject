@@ -32,6 +32,12 @@ public abstract class Piece {
         this.location = location;
     }
 
+    public Piece(Piece piece) {
+        this.isWhite = piece.isWhite;
+        this.location = piece.location;
+        this.pieceType = piece.pieceType;
+    }
+    
     public void outputLocationList(List<Location> locations) {
         if (locations.size() == 0) {
             System.out.println("Empty moves list");
@@ -61,7 +67,7 @@ public abstract class Piece {
         str.append(", Color= " + (isWhite ? "White" : "Black"));
 
         if (location != null) {
-            str.append(", Location= " + location.toString());
+            str.append(", " + location.toString());
         }
         
         return str.toString();

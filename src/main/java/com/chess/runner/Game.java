@@ -35,8 +35,10 @@ public class Game {
         System.out.println(testLocation.toString());
 
         //CONSTANTS DO NOT COMMENT OUT
-        final Location testLocationOne = new Location(File.A, 0);
-        final Location testLocationTwo = new Location(File.H, 7);
+        final Location locAO = new Location(File.A, 0);
+        final Location locH7 = new Location(File.H, 7);
+        final Location locA6 = new Location(File.A, 6);
+        final Location locA7 = new Location(File.A, 7);
 
         //Test Piece Abstract Class
         System.out.println("Testing Abstract Piece Class:");
@@ -44,21 +46,21 @@ public class Game {
         Piece testBlackPiece = new TestPiece(false);
         System.out.println(testWhitePiece);
         System.out.println(testBlackPiece);
-        Piece testPiece = new TestPiece(true, testLocationOne);
+        Piece testPiece = new TestPiece(true, locAO);
         System.out.println(testPiece);
 
         //Test Pawn Class
         System.out.println("Testing Pawn Class");
-        Piece testPawn = new Pawn(false, testLocationOne);
+        Piece testPawn = new Pawn(false, locAO);
         System.out.println(testPawn.toString());
 
         //Test Other Piece Classes
         System.out.println("Testing Other Piece Class");
-        Piece testBishop = new Bishop(false, testLocationOne);
-        Piece testKing = new King(true, testLocationTwo);
-        Piece testKnight = new Knight(false, testLocationOne);
-        Piece testQueen = new Queen(true, testLocationTwo);
-        Piece testRook = new Rook(false, testLocationOne);
+        Piece testBishop = new Bishop(false, locAO);
+        Piece testKing = new King(true, locH7);
+        Piece testKnight = new Knight(false, locAO);
+        Piece testQueen = new Queen(true, locH7);
+        Piece testRook = new Rook(false, locAO);
         System.out.println(testBishop.toString());
         System.out.println(testKing.toString());
         System.out.println(testKnight.toString());
@@ -76,14 +78,18 @@ public class Game {
         Board testBoardTwo = new Board();
         testBoardTwo.printBoard();
 
-        //Check Default rook move options no extra logic
+        //Check Default rook move options after removing a pawn to open a row
         System.out.println("Testing Rook Move Options");
         Board testBoardThree = new Board();
         Piece piece = testBoardThree.getPieceAt(0, 0);
-        testBoardThree.removePieceAt(1, 0); //remove pawn
+        testBoardThree.removePieceAt(0, 1); //remove pawn
         if (piece != null) {
-            List<Location> validMoves = ((Move) piece).getValidMoves(testBoardThree, testLocationOne, piece.isWhite);
+            List<Location> validMoves = ((Move) piece).getValidMoves(testBoardThree, locAO, piece.isWhite);
             piece.outputLocationList(validMoves);
         }
+
+        //Move said rook
+        ((Move) piece).movePiece(testBoardThree, locAO, locA6);
+        testBoardThree.printBoard();
     }
 }
